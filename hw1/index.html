@@ -42,7 +42,7 @@
   First, we defined three vertices for each triangles and checked if they were in the same winding order. 
   If they were not in the same winding order, we switched them accordingly. 
   This step is essential because it helps determine the direction in which the triangle is facing, which affects how it's rendered and shaded.
-  Then, we found the bounding box defined by x limits and y limits of the vertices using the ceiling and floor of the limits so that
+  Then, we found the bounding box defined by coordinates x limits and y limits of the vertices using the ceiling and floor of the limits so that
   we don't have to walk through the whole canvas for rasterization. Finally, we implemented the point-in-triangle three-line test, the method introduced in the lecture, 
   to determine whether the pixel within the bounding box is inside the triangle. If the pixel is inside the triangle, we fill it with a single color.
   Repeatedly, we could fill all the shapes on the screen.
