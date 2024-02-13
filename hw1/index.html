@@ -25,7 +25,7 @@
 
 <h1 align="middle">CS 184/284A: Computer Graphics and Imaging, Spring 2024</h1>
 <h1 align="middle">Homework 1: Rasterizer</h1>
-<h2 align="middle">Jeremy Chen</h2>
+<h2 align="middle">Jeremy Chen, Yuqin Jiao</h2>
 
 <br><br>
 
@@ -38,7 +38,37 @@
 
 <h3 align="middle">Part 1: Rasterizing single-color triangles</h3>
 
-<p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
+<p>In this task, we rasterized the triangles by using the sampling methods described in class.
+  First, we defined three vertices for each triangles and checked if they were in the same winding order. 
+  If they were not in the same winding order, we switched them accordingly. 
+  This step is essential because it helps determine the direction in which the triangle is facing, which affects how it's rendered and shaded.
+  Then, we found the bounding box defined by x limits and y limits of the vertices using the ceiling and floor of the limits so that
+  we don't have to walk through the whole canvas for rasterization. Finally, we implemented the point-in-triangle three-line test, the method introduced in the lecture, 
+  to determine whether the pixel within the bounding box is inside the triangle. If the pixel is inside the triangle, we fill it with a single color.
+  Repeatedly, we could fill all the shapes on the screen.
+  <br />
+  <br />
+  Our algorithm is no worse than one that checks each sample within the bounding box of the triangle. This is because what we did was exactly traversing 
+  from the minimum to the maximum of the bounding box, checking each sample within the bounding box of the triangle. </p>
+
+<div align="middle">
+  <table style="width=100%">
+    <tr>
+      <td>
+        <img src="images/1-1.png" align="middle" width="400px"/>
+        <figcaption align="middle"> image in the default view</figcaption>
+      </td>
+      <td>
+        <img src="images/1-2.png" align="middle" width="400px"/>
+        <figcaption align="middle"> image with the pixel inspector</figcaption>
+      </td>
+    </tr>
+    <br>
+  </table>
+</div>
+
+
+<h3 align="middle">Part 2: Antialiasing triangles</h3>
 
 <div align="middle">
   <table style="width=100%">
@@ -66,12 +96,13 @@
   </table>
 </div>
 
-
-<h3 align="middle">Part 2: Antialiasing triangles</h3>
-
-
-
 <h3 align="middle">Part 3: Transforms</h3>
+<p> We tried to make the cubeman do a stretching exercise. We first rotated the torso by 60 degrees and then moved the left arm 5 pixels 
+  right and 30 pixels up relative to the torso. We also changed the cubeman's customs by modifying the color from 
+  #EF161F(red) to #00171F(rich black) and the pattern by changing the winding vertices of triangles.  </p>
+<div align="center">
+  <img src="images/my_robots.png" width="400px"/>
+</div>
 
 
 
