@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -115,52 +114,54 @@
 <h3 align="middle">Part 5: "Pixel sampling" for texture mapping</h3>
 
 <p>
-    Pixel sampling is to determine the color of pixels on a surface.In our code, we used RasterizerImp::rasterize_textured_triangle function to
-    set a triangle, calculate the bounding box, and used Color Texture::sample function set P key for switch the pixel sampling method(sample_nearest and
-    sample_bilinear). The two pixel sampling methods, nearest and bilinear, are similar to the nearest/linear methods in classification models. The P_nearest
-    method samples the color by the cloest pixel, and the P_bilinear samples the color by the average_color_weight based on 4 pixels surrounding the target.
-    <br />
-    <br />
-    The test1.svg show a good example that bilinear sampling clearly defeats nearest sampling, especially in the 1 sample per pixel case. Here are the
-    screenshots using nearest sampling at 1 sample per pixel, nearest sampling at 16 samples per pixel, bilinear sampling at 1 sample per pixel, and
-    bilinear sampling at 16 samples per pixel. From the images, we found that the 16 samples per pixel images look better than the 1 samples per pixel
-    images, and the bilinear sampling performs generally better than the nearest sampling.
+  Pixel sampling is to determine the color of pixels on a surface.In our code, we used RasterizerImp::rasterize_textured_triangle function to
+  set a triangle, calculate the bounding box, and used Color Texture::sample function set P key for switch the pixel sampling method(sample_nearest and
+  sample_bilinear). The two pixel sampling methods, nearest and bilinear, are similar to the nearest/linear methods in classification models. The P_nearest
+  method samples the color by the cloest pixel, and the P_bilinear samples the color by the average_color_weight based on 4 pixels surrounding the target.
+  <br />
+  <br />
+  The test1.svg show a good example that bilinear sampling clearly defeats nearest sampling, especially in the 1 sample per pixel case. Here are the
+  screenshots using nearest sampling at 1 sample per pixel, nearest sampling at 16 samples per pixel, bilinear sampling at 1 sample per pixel, and
+  bilinear sampling at 16 samples per pixel. From the images, we found that the 16 samples per pixel images look better than the 1 samples per pixel
+  images, and the bilinear sampling performs generally better than the nearest sampling.
 </p>
   <div align="middle">
       <table style="width=100%">
           <tr>
               <td>
                   <img src="images/nearest1.png" align="middle" width="400px" />
-                  <P_nearest_1 align="middle">Caption goes here.</P_nearest_1>
+                  <figcaption align="middle">P_nearest 1 sample per pixel.</figcaption>
               </td>
               <td>
                   <img src="images/bilinear1.png" align="middle" width="400px" />
-                  <P_bilinear_1 align="middle">Caption goes here.</P_bilinear_1>
+                  <figcaption align="middle">P_bilinear 1 sample per pixel.</figcaption>
               </td>
           </tr>
           <br />
           <tr>
               <td>
                   <img src="images/nearest16.png" align="middle" width="400px" />
-                  <P_nearest_16 align="middle">Caption goes here.</P_nearest_16>
+                  <figcaption align="middle">P_nearest 16 samples per pixel.</figcaption>
               </td>
               <td>
                   <img src="images/bilinear16.png" align="middle" width="400px" />
-                  <P_bilinear_16 align="middle">Caption goes here.</P_bilinear_16>
+                  <figcaption align="middle">P_bilinear 16 samples per pixel.</figcaption>
               </td>
           </tr>
       </table>
   </div>
-  <p>
-      We found that generally the bilinear sampling performs better than the nearest sampling, however, in some colorful cases(test3 and test5),
-      the two sampling methods appear similar, and when we change sample rate from 1 to 16, the difference between these two sampling methods 
-      become less pronounced.</p>
+ <p>
+   We found that generally the bilinear sampling performs better than the nearest sampling, however, in some colorful cases(test3 and test5),
+   the two sampling methods appear similar, and when we change sample rate from 1 to 16, the difference between these two sampling methods 
+   become less pronounced.</p>
 
-    <h3 align="middle">Part 6: "Level sampling" with mipmaps for texture mapping</h3>
+<h3 align="middle">Part 6: "Level sampling" with mipmaps for texture mapping</h3>
+<p>
+   We found that generally the bilinear sampling performs better than the nearest sampling, however, in some colorful cases(test3 and test5),
+   the two sampling methods appear similar, and when we change sample rate from 1 to 16, the difference between these two sampling methods 
+   become less pronounced.</p>
 
-
-
-    <h2 align="middle">Section III: Art Competition</h2>
+<h2 align="middle">Section III: Art Competition</h2>
 </p><p>If you are not participating in the optional art competition, don't worry about this section!</p>
 
 <h3 align="middle">Part 7: Draw something interesting!</h3>
@@ -175,4 +176,3 @@
 		Homework 1 index.html here
 	</body>
 </html>
->>>>>>> 8db1e0e54f7469c53a44b5515baad98a318bcaf7
